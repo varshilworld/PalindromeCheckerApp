@@ -14,10 +14,9 @@ public class PalindromeCheckerApp {
                 break;
             }
         }
-// Print the original string
+
         System.out.println(input);
         
-        // Print result
         if (palindrome)
             System.out.println("Palindrome");
         else
