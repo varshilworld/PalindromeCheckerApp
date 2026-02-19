@@ -4,15 +4,19 @@ public class PalindromeCheckerApp {
     UC1
      */
     public static void main(String[] args) {
-        System.out.println("Welcome to Palindrome Checker Management System");
-        System.out.println("Version : 1.0");
-        System.out.println("System Initialised Successfully");
-        /*
-UC2
- */
+        String input = "madam";
+        boolean palindrome = true;
+
+        for (int i = 0; i < input.length() / 2; i++) {
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                palindrome = false;
+                break;
+            }
+        }
+
+        if (palindrome)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
     }
 }
-
-
-
-
