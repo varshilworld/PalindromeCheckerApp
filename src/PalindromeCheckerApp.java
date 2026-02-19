@@ -1,7 +1,7 @@
 public class PalindromeCheckerApp {
 
     /*
-    UC1
+    UC2
      */
     public static void main(String[] args) {
         String input = "madam";
