@@ -1,37 +1,30 @@
 public class PalindromeCheckerApp {
 
     /*
-    UC2
+    UC4
      */
-    public static void main(String[] args) {
-        String input = "madam";
+    
+        public static void main(String[] args) {
 
+            String input = "radar";
 
-        String front = "";
-        for (int i = 0; i < input.length(); i++) {
-            front += input.charAt(i); // add each character
+            char[] chars = input.toCharArray();
+
+            int start = 0;
+            int end = chars.length - 1;
+
+            boolean isPalindrome = true;
+
+            while (start < end) {
+                if (chars[start] != chars[end]) {
+                    isPalindrome = false;
+                    break;
+                }
+                start++;
+                end--;
+            }
+
+            System.out.println("Input : " + input);
+            System.out.println("Is Palindrome? : " + isPalindrome);
         }
-        System.out.println("Front collected: " + front);
-
-
-        String reverse = "";
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reverse += input.charAt(i);
-        }
-
-        System.out.println("Reverse collected: " +reverse);
-        if (reverse.equals(front)) {
-            System.out.println("Palindrome");}
-        else
-            System.out.println("Not Palindrome");
-
-
-
-
-
-        }
-        }
-
-
-
-
+    }
