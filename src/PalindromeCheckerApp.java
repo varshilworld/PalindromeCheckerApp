@@ -5,34 +5,35 @@ import java.util.Stack;
 public class PalindromeCheckerApp {
 
     /*
-    UC9
+    UC10
      */
 
 
 
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        String input = "A man a plan a canal Panama";
 
-            String input = "madam";
+        // 1. Normalization: Remove non-alphanumeric characters and lowercase everything
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-            boolean result = check(input, 0, input.length() - 1);
+        boolean isPalindrome = true;
 
-            System.out.println("Input : " + input);
-            System.out.println("Is Palindrome? : " + result);
+        // 2. Palindrome Logic (based on your hint)
+        for (int i = 0; i < normalized.length() / 2; i++) {
+
+            // Compare symmetric characters
+            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
         }
 
-        private static boolean check(String s, int start, int end) {
-
-            if (start >= end)
-                return true;
-
-            if (s.charAt(start) != s.charAt(end))
-                return false;
-
-            return check(s, start + 1, end - 1);
-        }
+        // 3. Output results
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
     }
-
+}
 
 
 
